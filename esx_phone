@@ -1,0 +1,16 @@
+RegisterCommand('progress', function()
+    exports['progressbar']:Progress({
+        name = "test",
+        duration = 5000,
+        label = "Chargement en cours...",
+        useWhileDead = false,
+        canCancel = true,
+        controlDisables = { disableMovement = true }
+    }, function(cancelled)
+        if not cancelled then
+            print("Action terminée !")
+        else
+            print("Action annulée !")
+        end
+    end)
+end, false)
