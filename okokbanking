@@ -1,0 +1,9 @@
+RegisterServerEvent('okokBanking:DepositMoney')
+AddEventHandler('okokBanking:DepositMoney', function(amount)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    if xPlayer.getMoney() >= amount then
+        xPlayer.removeMoney(amount)
+        xPlayer.addAccountMoney('bank', amount)
+        TriggerClientEvent('okokNotify:Alert', source, "Banque", "Dépôt de " .. amount .. "$ effectué", 5000, 'success')
+    end
+end)
