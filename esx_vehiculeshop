@@ -1,0 +1,11 @@
+RegisterServerEvent('esx_vehicleshop:buyVehicle')
+AddEventHandler('esx_vehicleshop:buyVehicle', function(vehicleModel, price)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    if xPlayer.getMoney() >= price then
+        xPlayer.removeMoney(price)
+        MySQL.Async.execute('INSERT INTO owned_vehicles (owner, vehicle) VALUES (@owner, @vehicle)', {
+            ['@owner'] = xPlayer.identifier,
+            ['@vehicle'] = json.encode({model = vehicleModel})
+        })
+    end
+end)
