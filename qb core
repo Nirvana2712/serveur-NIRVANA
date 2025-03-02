@@ -1,0 +1,8 @@
+QBCore = exports['qb-core']:GetCoreObject()
+
+RegisterServerEvent('qb:testEvent')
+AddEventHandler('qb:testEvent', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    print("Joueur " .. Player.PlayerData.name .. " a déclenché un test !")
+end)
