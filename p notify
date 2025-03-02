@@ -1,0 +1,8 @@
+RegisterCommand('testnotify', function()
+    exports['pNotify']:SendNotification({
+        text = "Ceci est un test de notification !",
+        type = "success",
+        timeout = 5000,
+        layout = "topRight"
+    })
+end, false)
