@@ -1,0 +1,7 @@
+RegisterNetEvent('anticheat:verifySpeed')
+AddEventHandler('anticheat:verifySpeed', function()
+    local ped = PlayerPedId()
+    if GetEntitySpeed(ped) > 50.0 then -- Vitesse max en m/s
+        TriggerServerEvent('anticheat:ban')
+    end
+end)
