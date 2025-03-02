@@ -1,0 +1,9 @@
+Config.Jobs = {
+    ['miner'] = {
+        Label = "Mineur",
+        Grades = {
+            ['0'] = { name = "apprenti", label = "Apprenti", salary = 200 },
+            ['1'] = { name = "expert", label = "Expert", salary = 400 }
+        }
+    }
+}
