@@ -1,0 +1,5 @@
+RegisterCommand('radio', function()
+    exports['pma-voice']:setVoiceProperty('radioEnabled', true)
+    exports['pma-voice']:setRadioChannel(1)
+    print("Radio activée sur le canal 1")
+end, false)
