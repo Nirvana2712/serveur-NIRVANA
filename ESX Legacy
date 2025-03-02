@@ -1,0 +1,7 @@
+ESX = exports["es_extended"]:getSharedObject()
+
+RegisterServerEvent('esx:testEvent')
+AddEventHandler('esx:testEvent', function()
+    local xPlayer = ESX.GetPlayerFromId(source)
+    print("Joueur " .. xPlayer.getName() .. " a déclenché un test !")
+end)
