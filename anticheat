@@ -1,0 +1,10 @@
+Citizen.CreateThread(function()
+    while true do
+        local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+        if vehicle ~= 0 then
+            local fuel = exports['LegacyFuel']:GetFuel(vehicle)
+            print("Niveau de carburant : " .. fuel .. "%")
+        end
+        Citizen.Wait(5000)
+    end
+end)
